@@ -12,8 +12,10 @@ req.send()
 req.onload = () =>{
     const json = JSON.parse(req.responseText)
     onscreen_quote.innerHTML = JSON.stringify(json[0].text)
+    onscreen_author.innerHTML = JSON.stringify(json[0].author)
     setInterval(()=>{
         const i = Math.floor(Math.random() * (1000))
         onscreen_quote.innerHTML = JSON.stringify(json[i].text);
+        onscreen_author.innerHTML = JSON.stringify(json[i].author)
     },10000)
 }
